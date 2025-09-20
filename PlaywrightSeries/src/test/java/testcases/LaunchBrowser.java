@@ -2,6 +2,7 @@ package testcases;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.nio.file.Paths;
 
 import com.microsoft.playwright.*;
 
@@ -18,7 +19,7 @@ public class LaunchBrowser {
 		System.out.println(width+":"+height);
 		
 		Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setExecutablePath(Paths.get("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")));
         BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
         Page page = browserContext.newPage();
         page.navigate("https://playwright.dev");
