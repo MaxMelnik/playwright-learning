@@ -2,7 +2,6 @@ package testcases;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.nio.file.Paths;
 
 import com.microsoft.playwright.*;
 
