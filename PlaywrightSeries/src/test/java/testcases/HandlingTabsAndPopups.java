@@ -25,7 +25,7 @@ public class HandlingTabsAndPopups {
 		});
 		
 		popup.locator("//*[@id=\"header-sign-up-btn\"]").click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		popup.locator("#user_name")
 			.pressSequentially(
 					"Maks Melnyk", 
