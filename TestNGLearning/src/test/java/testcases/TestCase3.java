@@ -15,12 +15,12 @@ public class TestCase3 {
 		System.out.println("Executing login test");
 	}
 
-	@Test(priority=3)
+	@Test(priority=3, dependsOnMethods="doUserReg", alwaysRun=true)
 	public void thirdTest() {
 		System.out.println("Executing third test");
 	}
 
-	@Test(priority=4)
+	@Test(priority=4, dependsOnMethods="doUserReg")
 	public void fourthTest() {
 		System.out.println("Executing fourth test");
 	}
