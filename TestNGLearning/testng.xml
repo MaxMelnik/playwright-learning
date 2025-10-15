@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Functional Suite">
-	<groups>
-		<run>
-			<include name="functional"></include>
-		</run>
-	</groups>
+	<!-- <groups> <run> <include name="functional"></include> </run> </groups> -->
+
+	<listeners>
+		<listener class-name="customListeners.Listeners"></listener>
+	</listeners>
+
 	<test thread-count="5" name="Login Test">
 		<classes>
 			<class name="testcases.TestCase1" />
@@ -19,6 +20,11 @@
 	<test thread-count="5" name="Dependency Test">
 		<classes>
 			<class name="testcases.TestCase3" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Failure Test">
+		<classes>
+			<class name="testcases.TestFailure" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
