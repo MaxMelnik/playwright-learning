@@ -20,6 +20,7 @@ public class Listeners implements ITestListener {
 
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
 		Reporter.log("<a href=\"C:\\Users\\User\\Pictures\\Wallpapers\\Seafh.full.1327410.jpg\" target=\"_blank\">Screenshot link</a>");
 		Reporter.log("<a href=\"C:\\Users\\User\\Pictures\\Wallpapers\\Seafh.full.1327410.jpg\" target=\"_blank\"><img height=200 src=\"C:\\Users\\User\\Pictures\\Wallpapers\\Seafh.full.1327410.jpg\"></a>");
 		
