@@ -24,12 +24,12 @@ public class TestCase1 {
 		System.out.println("Closing browser");
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1, groups="functional")
 	public void doUserReg() {
 		System.out.println("Executing user registration test");
 	}
 
-	@Test(priority=2)
+	@Test(priority=2, groups="functional")
 	public void doLogin() {
 		System.out.println("Executing login test");
 	}

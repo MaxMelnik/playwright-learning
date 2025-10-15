@@ -6,7 +6,7 @@ import org.testng.asserts.SoftAssert;
 
 public class TestCase2 {
 
-	@Test
+	@Test (priority=1, groups="smoke")
 	public void validateTitles() {
 		String expected_title = "Yahoo.com";
 		String actual_title = "Gmail.com";
