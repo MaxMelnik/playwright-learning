@@ -3,7 +3,7 @@ package testcases;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class TestCase3 {
+public class TestCase3 extends BaseTest {
 	@Test(priority=1, groups={"functional", "smoke"})
 	public void doUserReg() {
 		System.out.println("Executing user registration test");

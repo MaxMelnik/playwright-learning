@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
-public class TestCase2 {
+public class TestCase2 extends BaseTest {
 
 	@Test (priority=1, groups="smoke")
 	public void validateTitles() {

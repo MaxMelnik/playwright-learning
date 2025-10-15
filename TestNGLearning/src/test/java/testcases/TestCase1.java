@@ -2,7 +2,7 @@ package testcases;
 
 import org.testng.annotations.*;
 
-public class TestCase1 {
+public class TestCase1 extends BaseTest{
 	
 	@BeforeTest
 	public void creatingDBConn() {
