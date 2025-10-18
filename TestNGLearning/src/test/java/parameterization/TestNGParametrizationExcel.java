@@ -1,29 +1,43 @@
 package parameterization;
 
+import java.util.Hashtable;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TestNGParametrizationExcel {
 
 	@Test(dataProvider="getData")
-	public void testData(String username, String password, String is_correct) {
+	public void testData(Hashtable<String, String> data) {
 		
-		System.out.println(username+"---"+password+"---"+is_correct);
+		System.out.println(data.get("username")+"---"+data.get("password"));
 	}
 	
 	@DataProvider
 	public static Object[][] getData(){
 		
-		Object[][] data = new Object[2][3];
+		Object[][] data = new Object[2][1];
 		
-		data[0][0] = "trainer@way2automation.com";
-		data[0][1] = "pass1";
-		data[0][2] = "Y";
+		Hashtable<String, String> table1 =
+				new Hashtable<String, String>();
+		
+		table1.put("username",  "Bob");
+		table1.put("password",  "pass");
+		table1.put("is_active",  "Y");
+		table1.put("key",  "value");
+		
+		data[0][0] = table1;
 
-		data[1][0] = "java@way2automation.com";
-		data[1][1] = "pass2";
-		data[1][2] = "N";
+		Hashtable<String, String> table2 =
+				new Hashtable<String, String>();
 		
+		table2.put("username",  "John");
+		table2.put("password",  "@#$password$#@");
+		table2.put("is_active",  "N");
+		table2.put("key",  "value");
+		
+		data[1][0] = table2;
+
 		return data;
 				
 	}
