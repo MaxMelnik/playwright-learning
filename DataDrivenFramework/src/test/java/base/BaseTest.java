@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -14,6 +15,8 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+
+import extentlisteners.ExtentListeners;
 
 public class BaseTest {
 	
@@ -42,6 +45,30 @@ public class BaseTest {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	
+	public void click(String locatorKey) {
+		try {
+			page.locator(OR.getProperty(locatorKey)).click();
+			log.info("Clicking on: " + locatorKey);
+			ExtentListeners.test.info("Clicking on: " + locatorKey);
+		} catch (Throwable t) {
+			log.error("Error while clicking : " + t.getMessage());
+			ExtentListeners.test.fail("Error while clicking : " + t.getMessage());
+			Assert.fail(t.getMessage());
+		}
+	}
+
+	public void type(String locatorKey, String value) {
+		try {
+			page.locator(OR.getProperty(locatorKey)).fill(value);
+			log.info("Typing in: " + locatorKey + " the value: " + value);
+			ExtentListeners.test.info("Typing in: " + locatorKey + " the value: " + value);
+		} catch (Throwable t) {
+			log.error("Error while typing : " + t.getMessage());
+			ExtentListeners.test.fail("Error while typing : " + t.getMessage());
+			Assert.fail(t.getMessage());
 		}
 	}
 	
